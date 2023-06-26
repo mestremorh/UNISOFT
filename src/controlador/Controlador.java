@@ -74,22 +74,24 @@ public class Controlador implements ActionListener{
             limpiar();
         }
     }
-   //----------------------------------------------------------------------------------------------- agregar
+   //Metodo para agregar USuarios  a BD
     public void agregar(){
         String nombre=vista.txtNombres.getText();
         String documento=vista.txtDocumento.getText();
         String rol=vista.txtRol.getText();
         p.setNombre(nombre);
+
         p.setDocumento(documento);
+
         p.setRol(rol);
         int r=dao.agregar(p);
         if(r==1){
-            JOptionPane.showMessageDialog(vista, "Se agregó el usuario "+p.getNombre()+"");
+            JOptionPane.showMessageDialog(vista, "¡Se agregó el usuario "+p.getNombre()+"!");
         }else{
-            JOptionPane.showMessageDialog(vista, "Error al agregar el usuario "+p.getNombre()+"");
+            JOptionPane.showMessageDialog(vista, "¡Error al agregar el usuario "+p.getNombre()+"!");
         }
     }
-    //------------------------------------------------------------------------------------------ actualizar
+    //Metodo para actalizar los registros de usuario a BD
     public void actualizar(){
         int id=Integer.parseInt(vista.txtId.getText());
         String nombre=vista.txtNombres.getText();
@@ -102,9 +104,9 @@ public class Controlador implements ActionListener{
         
         int resultado=dao.actualizar(p);
         if(resultado==1){
-            JOptionPane.showMessageDialog(vista, "Se actualizó el usuario "+p.getNombre()+" de forma correcta!");
+            JOptionPane.showMessageDialog(vista, "¡Se actualizó el usuario "+p.getNombre()+" de forma correcta!");
         }else{
-             JOptionPane.showMessageDialog(vista, "Error al agregar el usuario "+p.getNombre()+"");
+             JOptionPane.showMessageDialog(vista, "¡Error al agregar el usuario "+p.getNombre()+"!");
         }  
     }
     //------------------------------------------------------------------------------------------ refrescar tabla
