@@ -120,12 +120,12 @@ public class Controlador implements ActionListener{
     void eliminar(){
              int fila = vista.tabla.getSelectedRow();
              if(fila==-1){
-                JOptionPane.showMessageDialog(vista, "Debe primero seleccionar un usuario!"); 
+                JOptionPane.showMessageDialog(vista, "¡Debe primero seleccionar un usuario!"); 
              }
              else{
                  int id=Integer.parseInt((String)vista.tabla.getValueAt(fila, 0).toString());
                  dao.eliminar(id);
-                 JOptionPane.showMessageDialog(vista, "Se eliminó el usurio usuario!");
+                 JOptionPane.showMessageDialog(vista, "¡Se eliminó el usurio usuario!");
              } 
     }
     //--------------------------------------------------------------------------------------------------  listar
